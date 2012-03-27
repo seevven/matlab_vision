@@ -1,0 +1,9 @@
+clear
+image=imread('crosscircle.png');
+image=rgb2gray(image);
+bw=edge(image,'sobel');
+se=strel('disk',1);
+bw=imdilate(bw,se);
+[L,num]=bwlabel(bw,4);
+[flag,shape]=identify(L,num);
+[Xcross,Ycross]=houghcross(L,flag ,num);

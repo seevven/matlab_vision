@@ -1,0 +1,17 @@
+function [ d ] = distance( L ,m,n)
+thresh=20;
+[x1,y1]=find(L==m);
+[x2,y2]=find(L==n);
+for i=1:size(x1,1)
+    for j=1:size(x2,1)
+        c(i,j)=sqrt((x1(i)-x2(j))^2+(y1(i)-y2(j))^2);
+    end
+end
+d=min(min(c));
+ if d<thresh
+       for k=1:size(x2,1)
+            L(x2(k),y2(k))=L(x1(1),y1(1));
+       end
+ end
+
+
