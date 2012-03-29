@@ -1,0 +1,29 @@
+function [Ex,Ey ] = linvec( L ,num)
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+[m,n]=size(L);
+sumx=zeros(num,1);
+sumy=zeros(num,1);
+Ex=zeros(num,1);
+Ey=zeros(num,1);
+setxy=cell(num,n);
+for i=1:num
+    for j=1:num
+        setxy=[];
+    end
+end
+for k=1:num
+    for i=1:m
+        for j=1:n
+            if L(i,j)==k
+                s
+                sumx(k,1)=sumx(k,1)+i;
+                sumy(k,1)=sumy(k,1)+j;
+            end
+        end
+    end
+    Ex(k,1)=sumx(k,1)/length(find(L==k));
+    Ey(k,1)=sumy(k,1)/length(find(L==k));
+end
+end
+
